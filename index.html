@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SonicVisuals | Edit & Audio Production</title>
+    <style>
+        :root {
+            --primary: #00ff88; /* Neon Green Accent */
+            --bg: #0a0a0a;
+            --card-bg: #161616;
+            --text: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        header {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            padding: 20px;
+        }
+
+        h1 { font-size: 4rem; margin-bottom: 10px; letter-spacing: -2px; }
+        p { font-size: 1.2rem; color: #ccc; max-width: 600px; }
+
+        .cta-button {
+            background-color: var(--primary);
+            color: black;
+            padding: 15px 35px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 25px;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover { transform: scale(1.05); }
+
+        /* Grid Layout */
+        .container {
+            max-width: 1100px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #222;
+            text-align: center;
+        }
+
+        .card h3 { color: var(--primary); margin-top: 0; }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 50px;
+            border-top: 1px solid #222;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>CUTS. BEATS. CLOUT.</h1>
+        <p>High-end video editing and custom industry-standard music production for creators who want to stand out.</p>
+        <a href="#contact" class="cta-button">START A PROJECT</a>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Services</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Video Editing</h3>
+                <p>Retention-focused editing for YouTube, Reels, and Music Videos. Includes VFX and Color Grading.</p>
+            </div>
+            <div class="card">
+                <h3>Music Production</h3>
+                <p>Custom beats, sound design, and full track mixing. Rights cleared for all platforms.</p>
+            </div>
+            <div class="card">
+                <h3>Full Production</h3>
+                <p>The total package: We handle the sound and the visuals for a cohesive brand identity.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <h2>Ready to work?</h2>
+        <p>Email: hello@yourbrand.com</p>
+        <p>&copy; 2026 Your Business Name</p>
+    </footer>
+
+</body>
+</html>
