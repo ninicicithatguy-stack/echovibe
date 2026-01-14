@@ -47,7 +47,23 @@
             transition: transform 0.2s;
         }
 
-        .cta-button:hover { transform: scale(1.05); }
+        .cta-button {
+    background: var(--primary);
+    color: #000;
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 0 15px var(--primary); /* This adds the neon glow */
+}
+
+.cta-button:hover {
+    transform: translateY(-3px); /* Makes it pop up when hovered */
+    box-shadow: 0 0 25px var(--primary); /* Makes the glow brighter */
+}
 
         /* Grid Layout */
         .container {
@@ -92,7 +108,7 @@
     <header>
         <h1>CUTS. BEATS. WEBSITES.</h1>
         <p>High-end video editing, custom industry-standard music production and professional websites for creators who want to stand out.</p>
-        <a href="href="mailto:levichirstianpearsonjr@gmail.com" class="cta-button">START A PROJECT</a>
+        <a href="href="mailto:levichirstianpearsonjr@gmail.com" class="cta-button">LET'S WORK</a>
     </header>
     <div class="container" style="text-align: center;">
     <h2 class="section-title">My Latest Edits</h2>
@@ -129,6 +145,7 @@
 </body>
 
 </html>
+
 
 
 
