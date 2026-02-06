@@ -103,6 +103,15 @@
         }
     </style>
 </head>
+    <div style="width: 100%; background: #000; padding: 15px 0; border-bottom: 1px solid #222; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 1000;">
+    <div style="position: relative; display: flex; align-items: center;">
+        <span style="position: absolute; left: 15px; color: var(--primary);">🔍</span>
+        <input type="text" id="siteSearch" placeholder="Look up videos or songs..." 
+            style="padding: 12px 12px 12px 40px; width: 350px; border-radius: 25px; border: 1px solid var(--primary); background: #111; color: white; outline: none;">
+    </div>
+    <div id="searchResults" style="display: none; position: absolute; top: 60px; background: #1a1a1a; width: 350px; border-radius: 10px; border: 1px solid var(--primary); z-index: 1001; padding: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.8);">
+    </div>
+</div>
 <body>
 
     <header><div style="padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 10px;">
@@ -142,8 +151,7 @@
     </div>
     <div class="container" style="padding: 60px 20px; border-top: 1px solid #222;">
     <h2 class="section-title">The Mission</h2>
-        <script>
-// This is your library of content
+       <script>
 const content = [
     { name: "Cybernetic Flow", type: "Song", link: "music.html" },
     { name: "Neon Nights", type: "Song", link: "music.html" },
@@ -160,15 +168,20 @@ searchInput.addEventListener('input', (e) => {
     
     if (term.length > 0) {
         const filtered = content.filter(item => item.name.toLowerCase().includes(term));
-        
         if (filtered.length > 0) {
             resultsDiv.style.display = 'block';
             filtered.forEach(item => {
                 const div = document.createElement('div');
-                div.style.padding = '10px';
+                div.style.padding = '12px';
                 div.style.borderBottom = '1px solid #333';
                 div.style.cursor = 'pointer';
-                div.innerHTML = `<span style="color:var(--primary)">[${item.type}]</span> ${item.name}`;
+                div.style.transition = '0.2s';
+                div.innerHTML = `<small style="color:var(--primary); display:block; font-size:10px;">${item.type.toUpperCase()}</small> ${item.name}`;
+                
+                // Hover effect
+                div.onmouseover = () => div.style.background = '#222';
+                div.onmouseout = () => div.style.background = 'transparent';
+                
                 div.onclick = () => window.location.href = item.link;
                 resultsDiv.appendChild(div);
             });
@@ -176,6 +189,13 @@ searchInput.addEventListener('input', (e) => {
             resultsDiv.style.display = 'none';
         }
     } else {
+        resultsDiv.style.display = 'none';
+    }
+});
+
+// Close results if user clicks away
+document.addEventListener('click', (e) => {
+    if (!searchInput.contains(e.target) && !resultsDiv.contains(e.target)) {
         resultsDiv.style.display = 'none';
     }
 });
@@ -231,6 +251,7 @@ searchInput.addEventListener('input', (e) => {
 </body>
 
 </html>
+
 
 
 
