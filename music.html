@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listen | EchoVibe</title>
+    <style>
+        :root { --primary: #00ff88; --bg: #0a0a0a; --card: #1a1a1a; --text: #fff; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; text-align: center; padding: 50px 20px; }
+        .container { max-width: 800px; margin: auto; }
+        h1 { color: var(--primary); font-size: 2.5rem; margin-bottom: 30px; }
+        .audio-card { background: var(--card); padding: 20px; border-radius: 15px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; border: 1px solid #333; }
+        .track-info { text-align: left; }
+        .track-info h3 { margin: 0; color: var(--primary); }
+        .track-info p { margin: 5px 0 0; color: #888; font-size: 0.9rem; }
+        audio { filter: invert(100%) hue-rotate(90deg) brightness(1.5); height: 35px; } /* Makes player look neon/dark */
+        .back-link { margin-top: 40px; display: block; color: #666; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SOUND DESIGN & BEATS</h1>
+        
+        <div class="audio-card">
+            <div class="track-info">
+                <h3>Cybernetic Flow</h3>
+                <p>Hard Trap / Phonk</p>
+            </div>
+            <audio controls>
+                <source src="track1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="audio-card">
+            <div class="track-info">
+                <h3>Neon Nights</h3>
+                <p>Lo-Fi / Chillhop</p>
+            </div>
+            <audio controls>
+                <source src="track2.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to EchoVibe Home</a>
+    </div>
+</body>
+</html>
