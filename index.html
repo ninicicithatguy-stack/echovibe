@@ -105,11 +105,12 @@
 </head>
 <body>
 
-    <header><nav style="padding: 20px; display: flex; justify-content: center; gap: 30px;">
-    <a href="index.html" style="color: #fff; text-decoration: none; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px;">HOME</a>
-    <a href="work-with-me.html" style="color: #fff; text-decoration: none; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px;">WORK WITH ME</a>
-    <a href="music.html" style="color: var(--primary); text-decoration: none; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px;">LISTEN</a>
-</nav>
+    <header><div style="padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+    <input type="text" id="siteSearch" placeholder="Look up videos or songs..." 
+        style="padding: 12px; width: 300px; border-radius: 25px; border: 1px solid var(--primary); background: #111; color: white; outline: none; text-align: center;">
+    <div id="searchResults" style="display: none; position: absolute; top: 180px; background: #1a1a1a; width: 300px; border-radius: 10px; border: 1px solid #333; z-index: 100; padding: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        </div>
+</div>
         <h1>CUTS. BEATS. WEBSITES.</h1>
         <p>High-end video editing, custom industry-standard music production and professional websites for creators who want to stand out.</p>
         <a href="work-with-me.html" class="cta-button">LET'S WORK</a>
@@ -141,6 +142,44 @@
     </div>
     <div class="container" style="padding: 60px 20px; border-top: 1px solid #222;">
     <h2 class="section-title">The Mission</h2>
+        <script>
+// This is your library of content
+const content = [
+    { name: "Cybernetic Flow", type: "Song", link: "music.html" },
+    { name: "Neon Nights", type: "Song", link: "music.html" },
+    { name: "Promo Edit", type: "Video", link: "index.html#latest-edits" },
+    { name: "Music Video 1", type: "Video", link: "work-with-me.html" }
+];
+
+const searchInput = document.getElementById('siteSearch');
+const resultsDiv = document.getElementById('searchResults');
+
+searchInput.addEventListener('input', (e) => {
+    const term = e.target.value.toLowerCase();
+    resultsDiv.innerHTML = '';
+    
+    if (term.length > 0) {
+        const filtered = content.filter(item => item.name.toLowerCase().includes(term));
+        
+        if (filtered.length > 0) {
+            resultsDiv.style.display = 'block';
+            filtered.forEach(item => {
+                const div = document.createElement('div');
+                div.style.padding = '10px';
+                div.style.borderBottom = '1px solid #333';
+                div.style.cursor = 'pointer';
+                div.innerHTML = `<span style="color:var(--primary)">[${item.type}]</span> ${item.name}`;
+                div.onclick = () => window.location.href = item.link;
+                resultsDiv.appendChild(div);
+            });
+        } else {
+            resultsDiv.style.display = 'none';
+        }
+    } else {
+        resultsDiv.style.display = 'none';
+    }
+});
+</script>
     <p style="max-width: 700px; margin: 0 auto; line-height: 1.6; color: #ccc;">
         EchoVibe was built to bridge the gap between high-energy visuals and industry-standard sound. 
         I believe every creator deserves an identity that feels as powerful as their content. 
@@ -192,6 +231,7 @@
 </body>
 
 </html>
+
 
 
 
