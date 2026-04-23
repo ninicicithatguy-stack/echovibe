@@ -106,7 +106,17 @@
     <div style="width: 100%; background: #000; padding: 15px 0; border-bottom: 1px solid #222; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 1000;">
     <div style="position: relative; display: flex; align-items: center;">
         <span style="position: absolute; left: 15px; color: var(--primary);">🔍</span>
+        <div style="position: fixed; top: 0; left: 0; width: 100%; background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(10px); padding: 10px 0; border-bottom: 1px solid var(--primary); display: flex; flex-direction: column; align-items: center; z-index: 9999;">
+    <div style="position: relative; display: flex; align-items: center;">
+        <span style="position: absolute; left: 15px; color: var(--primary); pointer-events: none;">🔍</span>
         <input type="text" id="siteSearch" placeholder="Look up videos or songs..." 
+            style="padding: 10px 15px 10px 40px; width: 300px; border-radius: 20px; border: 1px solid #333; background: #111; color: white; outline: none; font-size: 0.9rem;">
+    </div>
+    <div id="searchResults" style="display: none; position: absolute; top: 55px; background: #1a1a1a; width: 300px; border-radius: 10px; border: 1px solid var(--primary); z-index: 10000; padding: 5px; box-shadow: 0 10px 30px rgba(0,0,0,0.8);">
+    </div>
+</div>
+
+<div style="height: 70px;"></div> 
             style="padding: 12px 12px 12px 40px; width: 350px; border-radius: 25px; border: 1px solid var(--primary); background: #111; color: white; outline: none;">
     </div>
     <div id="searchResults" style="display: none; position: absolute; top: 60px; background: #1a1a1a; width: 350px; border-radius: 10px; border: 1px solid var(--primary); z-index: 1001; padding: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.8);">
