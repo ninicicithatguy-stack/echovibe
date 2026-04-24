@@ -166,15 +166,27 @@
     </div>
     <div class="container" style="padding: 60px 20px; border-top: 1px solid #222;">
     <h2 class="section-title">The Mission</h2>
-       <script>
-// Replace these with your actual video titles and song names
-const content = [
-    { name: "Eren Yeager Edit", type: "Video", link: "#latest-works" },
-    { name: "Slime Season", type: "Song", link: "music.html" },
-    { name: "Fast Lane", type: "Song", link: "music.html" }
-];
+      <script>
+    // 1. YOUR SEARCH CODE GOES HERE
+    const content = [
+        { name: "Eren Yeager Edit", type: "Video", link: "#latest-works" },
+        { name: "Slime Season", type: "Song", link: "music.html" },
+        { name: "Fast Lane", type: "Song", link: "music.html" }
+    ];
 
-// ... keep the rest of the search code the same ...
+    const searchInput = document.getElementById('siteSearch');
+    const resultsDiv = document.getElementById('searchResults');
+    // ... rest of search code ...
+
+    // 2. YOUR SLIDER CODE GOES HERE
+    const myWorks = [
+        { type: 'video', src: 'promo.mp4', title: 'Eren Yeager Edit', label: 'VIDEO' },
+        { type: 'audio', src: 'track1.mp3', title: 'Slime Season', label: 'SONG' },
+        { type: 'audio', src: 'track2.mp3', title: 'Fast Lane', label: 'SONG' }
+    ];
+    // ... rest of slider code ...
+    
+    updateDisplay(); 
 </script>
 const searchInput = document.getElementById('siteSearch');
 const resultsDiv = document.getElementById('searchResults');
